@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		div{
+			width:40%;
+			height:500px;
+			border-radius:700px;
+			background-color:blue;
+			margin-left:400px
+		}
+		#hr,#min,#sec,#milsec{
+			width:10%;
+			margin-top:230px;
+			font-size:30px;
+		}
+
+	</style>
+	<script>
+		var speed;
+		function countdowntimer(){
+        var milliseconds = milsec.value; 
+        milsec.value++;
+       speed = setTimeout("countdowntimer()",10)
+        if(milsec.value >= 100){
+           milsec.value = 0;
+           sec.value++;
+           if(sec.value >= 60){
+           	sec.value = 0;
+           	min.value++;
+           }
+           if(min.value >= 60){
+           	min.value = 0;
+           	hr.value++;
+        }
+        }
+}
+	function refresh(){
+				clearTimeout(speed);
+				milsec.value = "00";
+				sec.value = "00";
+				min.value = "00";
+				hr.value = "00";
+               
+
+		}function BBUTTON(){
+	     if(pc.value == 'resume'){
+	     pause();
+          pc.value = 'pause'  
+	     }else{
+	     	resume();
+	     	pc.value = 'resume'
+	     }
+
+	    function pause(){
+             clearTimeout(speed);
+	}
+	function resume(){
+	  speed = setTimeout("countdowntimer()",1000);
+	}
+}
+	</script>
+	<title>stopwatch upgrade</title>
+</head>
+<body>
+<div align="center"	>
+	<input type="" value="00" id="hr" name=""><input type="" value="00" id="min" name=""><input type="" value="00" id="sec" name=""><input type="" id="milsec" value="00" name=""><br><br>
+	<input type="button" id="start" value="start" name="" onclick="countdowntimer()"><input type="button" value="resume" id="pc" onclick="BBUTTON()" name=""><input type="button" value="refresh" id="refresh" onclick="refresh()" name="">
+</div>
+</body>
+</html>
