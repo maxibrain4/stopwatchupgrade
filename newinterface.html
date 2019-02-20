@@ -5,13 +5,17 @@
 		div{
 			width:40%;
 			height:500px;
-			border-radius:700px;
+			border-radius:600px;
 			background-color:blue;
 			margin-left:400px
 		}
 		#hr,#min,#sec,#milsec{
 			width:10%;
-			margin-top:230px;
+			margin-top:10px;
+			font-size:30px;
+		}
+		p{
+			padding-top:50px;
 			font-size:30px;
 		}
 
@@ -64,6 +68,8 @@
 </head>
 <body>
 <div align="center"	>
+	<p><b>STOPWATCH</b></p>
+	<br>
 	<input type="" value="00" id="hr" name=""><input type="" value="00" id="min" name=""><input type="" value="00" id="sec" name=""><input type="" id="milsec" value="00" name=""><br><br>
 	<input type="button" id="start" value="start" name="" onclick="countdowntimer()"><input type="button" value="resume" id="pc" onclick="BBUTTON()" name=""><input type="button" value="refresh" id="refresh" onclick="refresh()" name="">
 </div>
